@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphin Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #00897b;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            color: #00897b;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #00897b;
+            border-radius: 5px;
+            background-color: #e0f2f1;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00897b;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00695c;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Fun Facts About Dolphins</h1>
+        <ul id="facts-list"></ul>
+        <button id="new-fact-btn">Show Another Fact</button>
+    </div>
+
+    <p>EMAIL: 22f3001315@ds.study.iitm.ac.in</p>
+    <p><a href="mailto:22f3001315@ds.study.iitm.ac.in">Send an email</a></p>
+
+    <script>
+        const facts = [
+            "Dolphins are highly intelligent marine mammals known for their playful behavior and impressive problem-solving abilities.",
+            "There are over 40 species of dolphins, with the bottlenose dolphin being one of the most well-known and widespread.",
+            "Dolphins communicate using a variety of clicks, whistles, and body movements, and their communication is considered one of the most complex in the animal kingdom.",
+            "Dolphins have excellent eyesight both in and out of water, as well as a highly developed sense of hearing.",
+            "Dolphins use echolocation to navigate and hunt for prey, emitting sound waves that bounce off objects to create a detailed picture of their surroundings.",
+            "Dolphins are social animals and often live in groups called pods, which can range from a few individuals to over a thousand in some species.",
+            "The brain-to-body size ratio of dolphins is among the highest in the animal kingdom, indicating their advanced cognitive abilities.",
+            "Dolphins are carnivores and primarily eat fish and squid, sometimes working together to herd schools of fish for easier feeding.",
+            "Some dolphins have been observed using tools, such as sponges, to protect their snouts while foraging on the seafloor.",
+            "Dolphins have a layer of blubber that helps regulate their body temperature and provides energy storage."
+        ];
+
+        let currentFactIndex = 0;
+
+        function displayFact() {
+            const factsList = document.getElementById('facts-list');
+            factsList.innerHTML = ''; // Clear previous facts
+            const factItem = document.createElement('li');
+            factItem.textContent = facts[currentFactIndex];
+            factsList.appendChild(factItem);
+            currentFactIndex = (currentFactIndex + 1) % facts.length; // Loop through facts
+        }
+
+        document.getElementById('new-fact-btn').addEventListener('click', displayFact);
+
+        // Display the first fact on page load
+        displayFact();
+    </script>
+</body>
+</html>
